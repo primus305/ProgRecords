@@ -1,0 +1,62 @@
+<ion-app>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          ProgRecords
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/albumi">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Discover Albums</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/shopping-cart">
+            <ion-icon name="cart" slot="start"></ion-icon>
+            <ion-label>My Shopping Cart</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/orders">
+            <ion-icon name="paper" slot="start"></ion-icon>
+            <ion-label>My Orders</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" (click)="onLogout()" button>
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button routerLink="/search">
+        <ion-label>Search</ion-label>
+        <ion-icon name="search"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/albumi">
+        <ion-label>Albums</ion-label>
+        <ion-icon name="disc"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/shopping-cart">
+        <ion-label>Shopping cart</ion-label>
+        <ion-icon name="cart"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-app>
+
+

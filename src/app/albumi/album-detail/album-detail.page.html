@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/albumi"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="end">Pregled albuma</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ album.naziv }}</ion-card-title>
+          <ion-card-subtitle
+          >{{ album.izvodjac }}</ion-card-subtitle
+          >
+        </ion-card-header>
+        <ion-img [src]="album.slika"></ion-img>
+        <ion-card-content>
+          <p>{{ album.cena | currency }}</p>
+          <p>{{ album.godina }}</p>
+          <p>{{ album.zanr }}</p>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-100>
+      <ion-item>
+        <ion-label position="floating">Quantity</ion-label>
+        <ion-input type="number" maxlength="5" [(ngModel)]="kolicina"></ion-input>
+      </ion-item>
+      <div padding>
+        <ion-button  size="large" type="submit" expand="block" (click)="DodajUKorpu()">Add to cart<ion-icon slot="end" name="cart"></ion-icon></ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <!--<ion-row>-->
+    <!--<ion-col width-50 style="text-align: right">-->
+      <!--<ion-button color="primary" margin (click)="DodajUKorpu()">Add to cart</ion-button>-->
+    <!--</ion-col>-->
+    <!--<ion-col width-50 style="text-align: left">-->
+      <!--<ion-button color="primary" margin>About album</ion-button>-->
+    <!--</ion-col>-->
+  <!--</ion-row>-->
+
+</ion-content>
+
